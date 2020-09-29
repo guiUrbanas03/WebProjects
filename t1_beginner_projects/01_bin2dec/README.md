@@ -1,3 +1,3 @@
 ## Converter - Binary to Decimal
 
-![](bin-converter.PNG)
+![](images/bin-converter.PNG)

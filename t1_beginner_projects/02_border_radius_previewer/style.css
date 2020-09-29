@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex: 1 1 0;
+    justify-content: center;
+    background: linear-gradient(180deg, #8B60E8 0%, #2982D3 100%) no-repeat;
+    height: 100vh;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.671);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 20% 20% 30% 20% 10%;
+    grid-template-areas: 'header header header'
+                         'top-left . top-right'
+                         '. square .'
+                         'bottom-left . bottom-right'
+                         'footer footer footer';
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+}
+
+header {
+    grid-area: header;
+    background-color: #00000057;
+    align-self: stretch;
+    line-height: 600%;
+    border-radius: 10px 10px 0 0;
+}
+
+.radius-value-input {
+    border: 2px solid #fff;
+    background-color: rgba(0, 0, 0, 0.340);
+    color: #fff;
+    font-size: 1.2rem;
+    justify-self: center;
+    width: 80px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+input[name='top-left-border'] {
+    grid-area: top-left;
+}
+
+input[name='top-right-border'] {
+    grid-area: top-right;   
+}
+
+input[name='bottom-left-border'] {
+    grid-area: bottom-left;
+}
+
+input[name='bottom-right-border'] {
+    grid-area: bottom-right;
+}
+
+.container > h4 {
+    grid-area: footer;
+    font-weight: lighter;
+}
+
+.square {
+    grid-area: square;
+    background-color: #fff;
+    width: 200px;
+    height: 200px;
+    box-shadow: 2px 2px 5px #050505;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+@media (max-width: 425px) {
+    .square {
+        width: 100px;
+        height: 100px;
+    }
+
+    .radius-value-input {
+        width: 60px;
+        height: 35px;
+    }
+
+    header {
+        font-size: 0.5rem;
+    }
+
+    .container > h4 {
+        font-size: 0.8rem;
+    }
+}
